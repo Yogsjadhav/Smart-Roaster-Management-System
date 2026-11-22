@@ -5,6 +5,13 @@ const morgan = require('morgan');
 const connectDB = require('./config/database');
 const errorHandler = require('./middleware/errorHandler');
 const User = require('./models/User');
+const dns = require("node:dns");
+
+// Configure Google DNS for MongoDB Atlas SRV lookup
+dns.setServers([
+    "8.8.8.8",
+    "8.8.4.4"
+]);
 
 // Load env vars
 dotenv.config();
