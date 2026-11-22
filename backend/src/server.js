@@ -125,8 +125,11 @@ app.use(express.urlencoded({ extended: true }));
 
 // CORS
 app.use(cors({
-  origin: process.env.FRONTEND_URL || "http://localhost:5173",
-  credentials: true
+   origin: [
+    "https://smart-roaster-management-system-jtu.vercel.app",
+    "http://localhost:5173"
+  ],
+  credentials: true,
 }));
 
 // Dev logging
